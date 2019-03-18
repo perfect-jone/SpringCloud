@@ -1,0 +1,44 @@
+server:
+  port: 8001
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml         #mybatis配置文件所在路径
+  type-aliases-package: com.atjone.springcloud.bean          #所有bean别名类所在包
+  mapper-locations: classpath:mybatis/mapper/*.xml           #mapper映射文件
+  
+spring:
+  application:
+    name: microservicecloud-dept                             #微服务名称，很重要
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource             #当前数据源操作
+    driver-class-name: org.gjt.mm.mysql.Driver               #mysql驱动包
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/cloudDB01               #数据库名称
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 200
+
+eureka:
+  client:           #客户端注册进eureka服务列表内
+    service-url:
+      # defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: microservicecloud-dept8001-hystrix   #自定义服务名称
+    prefer-ip-address: true                   #访问数据可以显示IP地址
+  
+info:
+  app.name: atjone-microservicecloud
+  company.name: www.atjone.com
+  build.artifactId: microservicecloud-provider-dept-hystrix-8001
+  build.version: 0.0.1-SNAPSHOT
+    
+    
+    
+    
+    
+    
+        

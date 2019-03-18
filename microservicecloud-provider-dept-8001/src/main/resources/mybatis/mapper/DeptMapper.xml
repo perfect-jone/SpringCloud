@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.atjone.springcloud.dao.DeptDao">
+  	<insert id="add">
+  		insert into dept(dname,db_source) values (#{dname},database())
+  	</insert>
+  	<select id="get" resultType="Dept">
+  		select did,dname,db_source from dept where did=#{did}
+  	</select>
+  	<select id="list" resultType="Dept">
+  		select did,dname,db_source from dept
+  	</select>
+  </mapper>

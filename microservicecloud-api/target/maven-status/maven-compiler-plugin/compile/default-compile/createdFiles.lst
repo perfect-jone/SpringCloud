@@ -1,2 +1,4 @@
+com\atjone\springcloud\service\DeptClientServiceFallbackFactory$1.class
 com\atjone\springcloud\service\DeptClientService.class
+com\atjone\springcloud\service\DeptClientServiceFallbackFactory.class
 com\atjone\springcloud\bean\Dept.class

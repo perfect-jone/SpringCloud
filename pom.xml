@@ -9,8 +9,8 @@
 
 	<properties>
 		<project.bulid.sourceEncoding>UTF-8</project.bulid.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>   <!--每次编译的都是java8版本  -->
-		<maven.compiler.target>1.8</maven.compiler.target>   <!--每次编译的都是java8版本  -->
+		<maven.compiler.source>1.8</maven.compiler.source>   <!--每次编译的都是java8版本 -->
+		<maven.compiler.target>1.8</maven.compiler.target>   <!--每次编译的都是java8版本 -->
 		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<lombok.version>1.16.18</lombok.version>
@@ -67,14 +67,14 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
-	<!--在src/main/resources目录下找application.yml文件中以$开头以$结尾的文件  -->
+
+	<!--在src/main/resources目录下找application.yml文件中以$开头以$结尾的文件 -->
 	<build>
 		<finalName>microservicecloud</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
-				<!--设置true时会使用系统属性或者项目属性的值替换资源文件*.properties,*.xml当中的${}的值  -->
+				<!--设置true时会使用系统属性或者项目属性的值替换资源文件*.properties,*.xml当中的${}的值 -->
 				<filtering>true</filtering>
 			</resource>
 		</resources>
@@ -83,7 +83,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<configuration>
-					<encoding>UTF-8</encoding> 
+					<encoding>UTF-8</encoding>
 					<delimiters>
 						<delimit>$</delimit>
 					</delimiters>
@@ -103,5 +103,6 @@
 		<module>microservicecloud-provider-dept-8003</module>
 		<module>microservicecloud-consumer-dept-Feign</module>
 		<module>microservicecloud-provider-dept-hystrix-8001</module>
+		<module>microservicecloud-consumer-hystrix-dashboard</module>
 	</modules>
 </project>

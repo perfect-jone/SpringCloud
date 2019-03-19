@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:com.atjone.springcloud.rest.DeptProvider8001_APP</config>
+		<config>java:com.atjone.springcloud.rest.DeptConsumer_Dashboard_APP</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

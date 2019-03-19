@@ -1,0 +1,36 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: microservicecloud-zuul-gateway                    
+
+eureka:
+  client:          
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: gateway9527.com  
+    prefer-ip-address: true        
+              
+#路由网关映射
+zuul:
+  prefix: /atjone                             #增加前缀
+  ignored-services: microservicecloud-dept    #忽略真实微服务，否则真实，虚拟都可以访问，忽略所有微服务用"*"(双引号不可省略)
+  routes:
+    mydept.serviceId: microservicecloud-dept  #真实微服务名称
+    mydept.path: /mydept/**                   #映射的虚拟微服务名称
+  
+ 
+info:
+  app.name: atjone-microservicecloud
+  company.name: www.atjone.com
+  build.artifactId: microservicecloud-zuul-gateway-9527
+  build.version: 0.0.1-SNAPSHOT
+    
+    
+    
+    
+    
+    
+        
